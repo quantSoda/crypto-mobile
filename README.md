@@ -1,6 +1,7 @@
 # CryptoMobile
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.7.
+This is a school project that I developed myself
 
 ## Development server
 
