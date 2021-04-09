@@ -1,0 +1,37 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<div style="width: 70%">
+  <h1 id="header"> Crypto Haven</h1>
+</div>
+
+
+<!--html content-->
+<router-outlet style="width: 70%"></router-outlet>
+
+
+<!--navigation anchors for routing-->
+<div style="width: 70%" id="navbar">
+  <nav class="nav">
+      <a routerLink="/market" class="nav__link">
+        <i class="material-icons nav__icon">paid</i>
+        <span class="nav__text active"> Market </span>
+      </a>
+
+    <a routerLink="/news" class="nav__link">
+      <i class="material-icons nav__icon">feed</i>
+      <span class="nav__text"> News </span>
+    </a>
+
+    <a routerLink="/login" class="nav__link">
+      <i class="material-icons nav__icon">login</i>
+      <span class="nav__text"> Login</span>
+    </a>
+
+    <i routerLink="/about" class="nav__link">
+      <span class="material-icons nav__icon">info</span>
+      <span class="nav__text">About</span>
+    </i>
+
+  </nav>
+</div>
+
