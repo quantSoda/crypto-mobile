@@ -17,7 +17,7 @@ export class DataService {
       'DOT,UNI,TRX,ETC,GRT,MANA,&tsyms=BTC,USD,EUR&api_key=' +
       '758526217c88bdb44b1e31130e0536187eb94bb0e18403ec9898a255481bf8a1';
 
-/*  readonly urlNews = 'https://min-api.cryptocompare.com/data/v2/news/?feeds=cryptocompare,cointelegraph,coindesk&extraParams=YourSite*/
+  readonly urlNews ='https://min-api.cryptocompare.com/data/v2/news/?lang=EN'
 
   constructor(private _http: HttpClient) {
   }
@@ -26,10 +26,11 @@ export class DataService {
     return this._http.get(this.urlName).pipe(map(results => this.prices = results));
     }
 
-  /*getCryptoNews() {
+
+
+  getCryptoNews() {
     return this._http.get(this.urlNews).pipe(map(results => this.articles = results));
   }
-*/
 
 }
 /*

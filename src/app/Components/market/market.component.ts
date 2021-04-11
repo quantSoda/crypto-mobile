@@ -19,6 +19,7 @@ export class MarketComponent implements OnInit {
   ngOnInit() {
     this._data.getCryptoName().subscribe(results => this.cryptos = results)
     console.log(this.cryptos);
+
   }
 
   goToInfoPage( ){

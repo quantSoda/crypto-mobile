@@ -1,5 +1,4 @@
 .nav {
-
   overflow: hidden;
   position: fixed;
   bottom: 0;
@@ -24,3 +23,19 @@ body {
   overflow: hidden;
   white-space: nowrap;
 }
+
+header {
+  overflow: hidden;
+  position: fixed;
+  align-items: center;
+  top: 0;
+  width: 100%;
+  overflow-x: auto;
+  height: 55px;
+  display: flex;
+  margin-left: 100px;
+
+}
+
+
+

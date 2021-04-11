@@ -1,5 +1,73 @@
 <div class="container-fluid">
-  <div>
+  <div class="card">
+    <div class="card-header">
+        <h2> {{ title }}</h2>
+    </div>
+    <div class="card-body">
+      <!--login form-->
+      <form [formGroup]="loginForm" >
+          <div class="form-group">
+            <!--// first name input-->
+            <label for="txtFirstName"> First Name :</label>
+            <input type="text" id="txtFirstName" class="form-control" formControlName="_firstName">
+            <div *ngIf="loginForm.get('_firstName')?.invalid &&
+              (loginForm.get('_firstName')?.touched || loginForm.get('_firstName')?.dirty) ">
+              <small class="text-danger" *ngIf="loginForm.get('_firstName')?.errors?.required">First Name is required</small>
+              <small class="text-danger" *ngIf="loginForm.get('_firstName')?.errors?.minlength">First Name must be at least 2 char long</small>
+              <small class="text-danger" *ngIf="loginForm.get('_firstName')?.errors?.maxlength">First Name must be less than 32 char long</small>
+            </div>
 
+            <!--last name input-->
+            <label for="txtLastName"> Last Name :</label>
+            <input type="text" id="txtLastName" class="form-control" formControlName="_lastName">
+            <div *ngIf="loginForm.get('_lastName')?.invalid &&
+              (loginForm.get('_lastName')?.touched || loginForm.get('_lastName')?.dirty) ">
+              <small class="text-danger" *ngIf="loginForm.get('_lastName')?.errors?.required">Last Name is required</small>
+              <small class="text-danger" *ngIf="loginForm.get('_lastName')?.errors?.minlength">Last Name must be at least 2 char long</small>
+              <small class="text-danger" *ngIf="loginForm.get('_lastName')?.errors?.maxlength">Last Name must be less than 32 char long</small>
+            </div>
+
+            <!--username input-->
+            <label for="txtUsername"> Username :</label>
+            <input type="text" id="txtUsername" class="form-control" formControlName="_username">
+            <div *ngIf="loginForm.get('_firstName')?.invalid &&
+              (loginForm.get('_username')?.touched || loginForm.get('_username')?.dirty) ">
+              <small class="text-danger" *ngIf="loginForm.get('_username')?.errors?.required">Username is required</small>
+              <small class="text-danger" *ngIf="loginForm.get('_username')?.errors?.minlength">Username must be at least 2 char long</small>
+              <small class="text-danger" *ngIf="loginForm.get('_username')?.errors?.maxlength">Username must be less than 32 char long</small>
+            </div>
+
+            <!--email input-->
+            <label for="txtEmail"> Email :</label>
+            <input type="text" id="txtEmail" class="form-control" formControlName="_email">
+            <div *ngIf="loginForm.get('_email')?.invalid &&
+              (loginForm.get('_email')?.touched || loginForm.get('_email')?.dirty) ">
+              <small class="text-danger" *ngIf="loginForm.get('_email')?.errors?.required">Email is required</small>
+<!--
+              <small class="text-danger" *ngIf="loginForm.get('_email').errors.emailValidator">Email must be valid</small>
+-->
+            </div>
+
+            <!--password-->
+            <label for="txtPassword"> Password :</label>
+            <input type="text" id="txtPassword" class="form-control" formControlName="_password">
+            <div *ngIf="loginForm.get('_password')?.invalid &&
+              (loginForm.get('_password')?.touched || loginForm.get('_password')?.dirty) ">
+              <small class="text-danger" *ngIf="loginForm.get('_password')?.errors?.required">Password is required</small>
+            </div>
+
+            <!--verify password-->
+            <label for="txtVerifyPassword"> Verify Password :</label>
+            <input type="text" id="txtVerifyPassword" class="form-control" formControlName="_verifyPassword">
+            <div *ngIf="loginForm.get('_verifyPassword')?.invalid &&
+              (loginForm.get('_verifyPassword')?.touched || loginForm.get('_verifyPassword')?.dirty) ">
+              <small class="text-danger" *ngIf="loginForm.get('_verifyPassword')?.errors?.required">Second Password is required</small>
+            </div>
+          </div>
+      </form>
+    </div>
+    <div class="card-footer">
+        {{ loginForm.value | json }}
+    </div>
   </div>
 </div>

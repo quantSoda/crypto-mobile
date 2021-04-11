@@ -17,18 +17,23 @@ export class AppComponent implements OnInit{
 
 
   ngOnInit() {
+
     this._data.getCryptoName().subscribe(results => this.cryptos = results)
     console.log(this.cryptos);
 
-
     // allow
-    window.onscroll = function() {myFunction()};
+    window.onscroll = function() {bottomNavbar()};
+    window.onscroll = function() {headerNavbar()};
 
     let navbar = document.getElementById("navbar");
+    let header = document.getElementById("header");
     // @ts-ignore
     let sticky = navbar.offsetTop;
+    // @ts-ignore
+    let stickyHeader = header.offsetTop;
 
-    function myFunction() {
+
+    function bottomNavbar() {
       if (window.pageYOffset >= sticky) {
         // @ts-ignore
         navbar.classList.add("sticky");
@@ -39,20 +44,19 @@ export class AppComponent implements OnInit{
       }
     }
 
+    function headerNavbar() {
+      if (window.pageYOffset >= stickyHeader) {
+        // @ts-ignore
+        header.classList.add("sticky");
+      }
+      else {
+        // @ts-ignore
+        header.classList.remove("sticky");
+      }
+    }
+
+
   }
-
-
-
-
 
 
 }
-
-/*goToInfoPage(cryptoname:string):void {
-    this.router.navigate([`${cryptoname}`]);
-
-  }
-
-  goToMarket(pagename:string):void {
-    this.router.navigate([`${pagename}`])
-  }*/

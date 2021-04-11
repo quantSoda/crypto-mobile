@@ -1,1 +1,10 @@
-<p>news works!</p>
+<div *ngIf="cryptos">
+  <div id="crypto-container" *ngFor="let crypto of objectKeys(cryptos); let i = index"> <!--(click)="goToInfoPage('cryptoinfo')"-->
+      <span class="right"> {{ cryptos.Data[i].title }}</span>
+
+    <!--
+        <span class="right"> {{ cryptos[crypto].USD | currency:'USD $':true }} </span>
+    -->
+  </div>
+</div>
+
